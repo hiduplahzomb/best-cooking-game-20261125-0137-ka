@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kedai Mie Beruap — Ramen Rush</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="hud-block" id="hud-score">
+      <span class="hud-label">SCORE</span>
+      <span id="score">0</span>
+      <span class="hud-sub">target <b id="target">1000</b></span>
+    </div>
+    <div class="hud-block" id="hud-shift">
+      <span class="hud-label">⏱ SHIFT</span>
+      <div class="shift-bar"><div id="shift-fill"></div></div>
+      <span id="shift-time">2:30</span>
+    </div>
+    <div class="hud-block" id="hud-combo">
+      <span class="hud-label">🔥 COMBO</span>
+      <span id="combo">×1</span>
+    </div>
+    <div class="hud-block" id="hud-level">
+      <span class="hud-label">LEVEL</span>
+      <span id="level">1</span>
+    </div>
+    <div class="hud-block" id="hud-strikes">
+      <span class="hud-label">ANGRY CUSTOMERS</span>
+      <span id="strikes">😊 😊 😊</span>
+    </div>
+    <button id="btn-pause" title="Pause (P)">⏸</button>
+    <button id="btn-mute" title="Sound (M)">🔊</button>
+  </header>
+
+  <main id="kitchen">
+    <section id="order-board" aria-label="Order board">
+      <h2>📋 ORDER BOARD</h2>
+      <div id="tickets"></div>
+      <p id="board-hint">Click a ticket to pick the order you are working on.</p>
+    </section>
+
+    <section id="counter" aria-label="Kitchen counter">
+      <h2>🍜 KITCHEN COUNTER</h2>
+      <div id="broths"></div>
+      <div id="noodle-station"></div>
+      <div id="toppings"></div>
+    </section>
+
+    <section id="bowl-area" aria-label="Assembled bowl">
+      <h2>🥣 YOUR BOWL</h2>
+      <div id="bowl">
+        <div id="bowl-steam">♨</div>
+        <div id="bowl-contents"></div>
+        <div id="bowl-status">Bowl empty — pour broth first!</div>
+      </div>
+      <button id="btn-serve">🍽 SERVE! <span class="key">Space</span></button>
+      <button id="btn-dump">🗑 Dump bowl</button>
+      <div id="serve-feedback"></div>
+    </section>
+  </main>
+
+  <footer id="help-bar">
+    <span><b>1–6</b> topping</span><span><b>B</b> broth</span><span><b>N</b> noodles</span>
+    <span><b>Space</b> serve</span><span><b>Tab</b> switch ticket</span>
+    <span><b>P</b> pause</span><span><b>M</b> sound</span>
+    <span id="toast"></span>
+  </footer>
+
+  <div id="overlay" class="hidden">
+    <div id="overlay-card"></div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
